@@ -1,0 +1,7 @@
+package com.shad.domain.battlefield;
+
+import com.shad.domain.Character;
+
+public class Player extends Character {
+
+}

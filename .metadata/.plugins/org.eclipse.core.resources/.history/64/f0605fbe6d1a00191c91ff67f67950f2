@@ -1,0 +1,15 @@
+package domain.battlefield;
+
+import com.shad.domain.Player;
+import com.shad.domain.Trainer;
+
+public class Battlefield {
+
+	protected Weather weather;
+
+	protected Player player;
+	
+	protected Trainer opponent;
+	
+//	protected Monster[] onFieldMonsters = new Monster[BattlefieldPosition.values().length]; // inferred from Trainer objects
+}

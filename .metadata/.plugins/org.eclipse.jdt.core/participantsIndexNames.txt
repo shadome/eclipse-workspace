@@ -1,0 +1,9 @@
+INDEX VERSION 1.131
+C:\Users\XPS 15\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\58142878.index
+\front\src\main\java
+C:\Users\XPS 15\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\309628659.index
+\front\src\main\java
+C:\Users\XPS 15\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3744949394.index
+\front\src\main\java
+C:\Users\XPS 15\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\921774713.index
+\kiwi\src\main\java

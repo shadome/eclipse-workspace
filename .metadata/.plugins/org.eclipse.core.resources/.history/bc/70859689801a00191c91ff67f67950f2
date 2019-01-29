@@ -1,0 +1,15 @@
+package domain;
+
+public class Trainer extends Character {
+	
+	protected Monster[] team = new Monster[6]; // TODO magic number
+
+	public Monster[] getTeam() {
+		return team;
+	}
+
+	public void setTeam(Monster[] team) {
+		this.team = team;
+	}
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;servlets.Battlefield&apos; to &apos;BattlefieldServlet&apos;&#x0D;&#x0A;- Original project: &apos;back&apos;&#x0D;&#x0A;- Original element: &apos;servlets.Battlefield&apos;&#x0D;&#x0A;- Renamed element: &apos;servlets.BattlefieldServlet&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Battlefield&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;servlets{Battlefield.java[Battlefield" matchStrategy="1" name="BattlefieldServlet" qualified="false" references="true" similarDeclarations="false" stamp="1547746308138" textual="false" version="1.0"/>
+</session>

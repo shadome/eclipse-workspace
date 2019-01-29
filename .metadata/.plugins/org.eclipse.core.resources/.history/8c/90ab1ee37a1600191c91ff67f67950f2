@@ -1,0 +1,5 @@
+package com.shad.domain.battlefield;
+
+public enum MoveIndex {
+
+}

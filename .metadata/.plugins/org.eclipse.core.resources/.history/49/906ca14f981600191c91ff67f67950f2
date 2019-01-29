@@ -1,0 +1,12 @@
+package com.shad.domain.battlefield;
+
+public class Battlefield {
+
+	protected Weather weather;
+	
+	protected Monster[] party;
+	
+	protected Monster[] opponent;
+	
+	
+}

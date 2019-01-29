@@ -1,0 +1,7 @@
+package com.shad.domain.battlefield;
+
+public class Trainer extends Character {
+	
+	protected Monster[] team = new Monster[6];
+
+}

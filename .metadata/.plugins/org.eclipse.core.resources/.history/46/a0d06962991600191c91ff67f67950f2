@@ -1,0 +1,10 @@
+package com.shad.domain.battlefield;
+
+public class Character {
+	
+	protected Monster[] party;
+	
+	public Character() {
+		this.party = new Monster[6];
+	}
+}

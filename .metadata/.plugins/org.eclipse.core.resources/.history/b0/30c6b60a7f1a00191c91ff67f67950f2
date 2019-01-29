@@ -1,0 +1,85 @@
+package servlets;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.google.gson.Gson;
+import domain.Monster;
+import domain.Statistic;
+import domain.Type;
+import domain.battlefield.Battlefield;
+
+/**
+ * Servlet implementation class MainServlet
+ */
+@WebServlet("/Battlefield")
+public class BattlefieldServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public BattlefieldServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+//		response.getWriter().append("Served at: ").append(request.getContextPath());
+//		response.getWriter().println("battlefield");
+
+		Monster m = new Monster();
+		Statistic s = new Statistic();
+		s.setBase(100);
+		m.setLevel(50);
+		m.setName("mew");
+		m.setNumber(151);
+		m.setType1(Type.PSYCHIC);
+		m.setType2(Type.NONE);
+		try {
+			m.setAttack((Statistic) s.clone());
+			m.setDefense((Statistic) s.clone());
+			m.setSpattack((Statistic) s.clone());
+			m.setSpdefense((Statistic) s.clone());
+			m.setSpeed((Statistic) s.clone());
+		} catch (CloneNotSupportedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		m.setHp(100);
+		String str = new Gson().toJson(m);
+		System.out.println(str);
+		response.getWriter().println(str+'\n'+str);
+//		response.setContentType("application/json");
+//		// Get the printwriter object from response to write the required json object to the output stream      
+//		PrintWriter out = response.getWriter();
+//		// Assuming your json object is **jsonObject**, perform the following, it will return your json object  
+//		out.print(jsonObject);
+//		out.flush();
+	}
+	
+	@Deprecated
+	private String battlefieldToString(Battlefield b) {
+		StringBuilder sb = new StringBuilder();
+		monsterToString(b.getOpponent().getTeam()[0]);
+		sb.append(System.lineSeparator());
+		return sb.toString();
+	}
+	@Deprecated
+	private String monsterToString(Monster m) {
+		return new StringBuilder()
+			.append(m.getName())
+			.append(" [")
+			.append(m.getHp())
+			.append("]").toString();
+	}
+// TODO search for RESTful API best practice (GET? POST?)
+}

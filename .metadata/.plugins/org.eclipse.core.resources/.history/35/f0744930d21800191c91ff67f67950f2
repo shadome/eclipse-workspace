@@ -1,0 +1,29 @@
+package com.shad.domain;
+
+import java.util.List;
+
+import com.shad.domain.Move;
+import com.shad.domain.Statistic;
+import com.shad.domain.Type;
+
+public class Monster {
+	protected int number;
+	protected String name;
+	protected int level;
+	protected Type type1;
+	protected Type type2;
+	
+	/** Moves usable during a battle. */
+	protected Move[] moveset = new Move[4]; // TODO magic number
+	/** List of moves learnt by the monster from which a move set is extracted. */
+	protected List<Move> trainedMoves;
+	
+//	private HPStatistic hp;
+	protected int hp; //percent
+	protected Statistic attack;
+	protected Statistic defense;
+	protected Statistic spattack;
+	protected Statistic spdefense;
+	protected Statistic speed;
+
+}

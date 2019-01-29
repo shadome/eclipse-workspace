@@ -1,0 +1,34 @@
+package controllers;
+
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+@Controller
+@RequestMapping("/*")
+public class GameController {
+
+    @RequestMapping(method = RequestMethod.GET)
+    public String afficherBonjour(final ModelMap pModel) {
+
+        URL gwtServlet = null;
+        try {
+            gwtServlet = new URL("http://localhost:8888/app/PushServlet");
+            HttpURLConnection servletConnection = (HttpURLConnection) gwtServlet.openConnection();
+            servletConnection.setRequestMethod("POST");
+            servletConnection.setDoOutput(true);
+
+            pModel.addAttribute("forname", servletConnection.getInputStream().toString());
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        
+        return "game";
+    }
+}

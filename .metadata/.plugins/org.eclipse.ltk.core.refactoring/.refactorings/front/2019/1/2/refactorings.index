@@ -1,0 +1,6 @@
+1547163771580	Move 'index.jsp' to 'WEB-INF'
+1547166950623	Delete element
+1547167618868	Rename type 'BattlefieldController'
+1547167779120	Rename resource 'index.jsp'
+1547168176079	Move 'game.jsp' to 'webapp'
+1547168534158	Move 'game.jsp' to 'vues'

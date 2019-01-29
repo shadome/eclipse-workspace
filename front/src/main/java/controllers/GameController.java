@@ -1,0 +1,57 @@
+package controllers;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.stream.Collectors;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.shad.domain.Monster;
+import com.shad.domain.Statistic;
+import com.shad.domain.Type;
+
+@Controller
+@RequestMapping("/*")
+public class GameController {
+
+	@RequestMapping(method = RequestMethod.GET)
+	public String afficherBonjour(final ModelMap pModel) throws CloneNotSupportedException {
+
+		Monster m = new Monster();
+		Statistic s = new Statistic();
+		s.setBase(100);
+		m.setLevel(50);
+		m.setName("mew");
+		m.setNumber(151);
+		m.setType1(Type.PSYCHIC);
+		m.setType2(Type.NONE);
+		m.setAttack((Statistic) s.clone());
+		m.setDefense((Statistic) s.clone());
+		m.setSpattack((Statistic) s.clone());
+		m.setSpdefense((Statistic) s.clone());
+		m.setSpeed((Statistic) s.clone());
+		m.setHp(100);
+		URL gwtServlet = null;
+		try {
+			gwtServlet = new URL("http://localhost:9090/back/Battlefield");
+			HttpURLConnection servletConnection = (HttpURLConnection) gwtServlet.openConnection();
+			servletConnection.setRequestMethod("GET");
+			servletConnection.setDoInput(true);
+
+			String result = new BufferedReader(new InputStreamReader(servletConnection.getInputStream())).lines()
+					.collect(Collectors.joining("\n"));
+			pModel.addAttribute("forname", result);
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return "game";
+	}
+}
