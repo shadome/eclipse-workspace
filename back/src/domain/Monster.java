@@ -2,9 +2,9 @@ package domain;
 
 import java.util.List;
 
-import domain.Move;
 import domain.Statistic;
 import domain.Type;
+import domain.moves.Move;
 
 public class Monster implements Cloneable {
 	protected int number;
@@ -106,6 +106,10 @@ public class Monster implements Cloneable {
 
 	public void setHp(int hp) {
 		this.hp = hp;
+		if (this.hp < 0)
+			this.hp = 0;
+		if (this.hp > 100)
+			this.hp = 100;
 	}
 
 	public Statistic getAttack() {
